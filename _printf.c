@@ -29,12 +29,10 @@ int _printf(const char *format, ...)
 					count++;
 					break;
 				case 's':
-					print_string(va_arg(arg, char *));
-					count++;
+					count += print_string(va_arg(arg, char *));
 					break;
 				case 'c':
-					print_char(va_arg(arg, int));
-					count++;
+					count += print_char(va_arg(arg, int));
 					break;
 				case 'd':
 					count += print_int(va_arg(arg, int));
