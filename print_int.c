@@ -11,12 +11,13 @@ int print_int(int num)
 	char buffer[20];
 	int i = 0;
 	int j;
+	int count = 0;
 
 	if (num == 0)
-		print_char('0');
+		count += print_char('0');
 	if (num < 0)
 	{
-		print_char('-');
+		count += print_char('-');
 		num = -num;
 	}
 	while (num > 0)
@@ -25,8 +26,8 @@ int print_int(int num)
 		num /= 10;
 	}
 	for (j = i - 1; j >= 0; j--)
-		print_char(buffer[j]);
-	return (0);
+		count += print_char(buffer[j]);
+	return (count);
 
 
 }
