@@ -17,35 +17,35 @@ int _printf(const char *format, ...)
 	va_start(arg, format);
 	while (*format)
 	{
-		if (*format == '%'
-				{
-				format++;
-				break;
-				switch (*format)
-				{
+		if (*format == '%')
+		{
+			format++;
+			break;
+			switch (*format)
+			{
 				case '%':
-				c = '%';
-				write(1, &c, 1);
-				count++;
-				break;
+					c = '%';
+					write(1, &c, 1);
+					count++;
+					break;
 				case 's':
-				count += print_string(va_arg(arg, char *));
-				break;
+					count += print_string(va_arg(arg, char *));
+					break;
 				case 'c':
-				count += print_char(va_arg(arg, int));
-				break;
+				        count += print_char(va_arg(arg, int));
+				        break;
 				case 'd':
-				count += print_int(va_arg(arg, int));
-				break;
+				        count += print_int(va_arg(arg, int));
+				        break;
 				case 'i':
-				count += print_int(va_arg(arg, int));
-				break;
+				        count += print_int(va_arg(arg, int));
+				        break;
 				default:
-				write(1, format - 1, 2);
-				count += 2;
-				break;
-				}
-				}
+					write(1, format - 1, 2);
+				        count += 2;
+				        break;
+			}
+		}
 		else
 		{
 			write(1, format, 1);
